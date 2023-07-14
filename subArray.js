@@ -68,3 +68,40 @@ function maximumSumSubArray(array, length) {
 let maxSubArraySumResult = maximumSumSubArray([1, 5, -4, 3, -9, 3], 6);
 
 console.log(maxSubArraySumResult);
+
+
+// Find total sum of odd length subArrays
+
+let sumOddLengthSubArrays = function (array) {
+
+    let totalSumOddLengthSubArrays = 0;
+
+    for (let i = 0; i < array.length; i++) {
+
+        let flag = 1;
+
+        for (let j = i; j < array.length; j++) {
+
+            for (let k = i; k <= j; k++) {
+
+                if (flag % 2 === 1) {
+
+                    totalSumOddLengthSubArrays += array[k];
+
+                }
+
+            }
+
+            flag++;
+
+        }
+
+    }
+
+    return totalSumOddLengthSubArrays;
+
+}
+
+let sumOddLengthSubArraysresult = sumOddLengthSubArrays([1, 4, 2, 5, 3]);
+
+console.log(sumOddLengthSubArraysresult);
