@@ -31,3 +31,40 @@ function subArray(array, length) {
 let subArrayResult = (subArray([1, 2, 3, 4, 5], 5));
 
 console.log(subArrayResult);
+
+
+// function to return maximum sum among all subArrays
+
+function maximumSumSubArray(array, length) {
+
+    let maximumSubArraySum = -Infinity;
+
+    for (let i = 0; i < length; i++) {
+
+        for (let j = 1; j < length; j++) {
+
+            let subArraySum = 0;
+
+            for (let k = i; k <= j; k++) {
+
+                subArraySum += array[k];
+
+            }
+
+            if (subArraySum > maximumSubArraySum) {
+
+                maximumSubArraySum = subArraySum;
+
+            }
+
+        }
+
+    }
+
+    return maximumSubArraySum;
+
+}
+
+let maxSubArraySumResult = maximumSumSubArray([1, 5, -4, 3, -9, 3], 6);
+
+console.log(maxSubArraySumResult);
